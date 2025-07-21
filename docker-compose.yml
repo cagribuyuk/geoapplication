@@ -1,0 +1,18 @@
+version: '3.8'
+services:
+  osrm-backend:
+    image: osrm/osrm-backend
+    volumes:
+      - ./osrm/osrm-backend:/data
+    ports:
+      - "5000:5000"
+    command: osrm-routed --algorithm mld /data/switzerland-latest.osrm
+
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    depends_on:
+      - osrm-backend

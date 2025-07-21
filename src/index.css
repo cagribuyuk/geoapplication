@@ -1,0 +1,10 @@
+/* src/index.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.map-container {
+    width: 50%; /* Genişliği azaltabilirsiniz */
+    max-width: 300px; /* Maksimum genişliği ayarlayabilirsiniz */
+    height: 200px; /* Yüksekliği ayarlayın, gerekirse değiştirin */
+}
